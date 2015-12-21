@@ -26,5 +26,8 @@
 *.out
 *.app
 
-Temp/*.*
-Build/*.*
+Temp/
+Build/
+
+*.opensdf
+*.sdf

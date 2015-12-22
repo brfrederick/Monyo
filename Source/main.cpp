@@ -1,5 +1,5 @@
 #include <Windows.h>
-#include "Core\App.h"
+#include "Core\Game.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pCmdLine, int nShowCmd) {
 	WindowSettings settings;
@@ -10,11 +10,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pCmdLine, 
 	settings.resizing = false;
 	settings.title = "Monyo App Title";
 
-	App app(settings, hInstance);
+	Game game(settings, hInstance);
 
-	if (app.Init() != 0) {
+	if (game.Init() != 0) {
 		return -1;
 	}
 
-	return app.Run();
+	return game.Run();
 }

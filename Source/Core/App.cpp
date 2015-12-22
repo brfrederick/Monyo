@@ -36,6 +36,8 @@ App::~App()
 
 int App::Init()
 {
+	Logger::Debug("App::Init");
+
 	//Windows application specific initalization
 	if (this->InitWindow() != 0) 
 	{
@@ -54,6 +56,8 @@ int App::Init()
 //Windows application specific initalization
 int App::InitWindow()
 {
+	Logger::Debug("App::InitWindow");
+
 	WNDCLASS wc;
 	wc.style = CS_HREDRAW | CS_VREDRAW;
 	wc.lpfnWndProc = WndMsgProc;
@@ -107,8 +111,12 @@ int App::InitWindow()
 // @NOTE add params, two callbacks, update and draw? game::run calls base.run passing
 //		the callbacks to properly trigger the loop?
 // @NOTE virtualize update and draw functions, game override them but not RUN ?
+// @NOTE might be better to utilize the EventManager and trigger update and draw events
+//		Other systems like World and GraphicsM. would be listening to the events
 int App::Run()
 {
+	Logger::Debug("App::Run");
+
 	//Show window
 	ShowWindow(this->hMainWnd, 1);
 	UpdateWindow(this->hMainWnd);
@@ -128,11 +136,18 @@ int App::Run()
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 
-			//->Update();
-			//->Draw();
+			this->Update();
+			this->Render();
 		}
 	}
 
-	// cleanup app&game ->Release();
+	this->Shutdown();
 	return (int)msg.wParam;
+}
+
+int App::Shutdown() 
+{
+	Logger::Debug("App::Shutdown");
+
+	return 0;
 }

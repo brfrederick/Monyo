@@ -55,6 +55,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>NotSet</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -103,6 +104,7 @@
     <ClInclude Include="..\..\Source\Util\File.h" />
     <ClInclude Include="..\..\Source\Util\InputManager.h" />
     <ClInclude Include="..\..\Source\Util\Logger.h" />
+    <ClInclude Include="..\..\Source\Util\Singleton.h" />
     <ClInclude Include="..\..\Source\Util\SmartBucket.h" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +144,7 @@
     <ClCompile Include="..\..\Source\main.cpp" />
     <ClCompile Include="..\..\Source\Util\File.cpp" />
     <ClCompile Include="..\..\Source\Util\Logger.cpp" />
+    <ClCompile Include="..\..\Source\Util\Singleton.cpp" />
     <ClCompile Include="..\..\Source\Util\SmartBucket.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

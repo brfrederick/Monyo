@@ -152,6 +152,9 @@
     <ClInclude Include="..\..\Source\Components\CameraComponent.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Util\Singleton.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\..\Assets\Shaders\PixelShader.hlsl">
@@ -201,9 +204,6 @@
     <ClCompile Include="..\..\Source\Core\App.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Core\Game.cpp">
-      <Filter>Source Files\Core</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Events\Event.cpp">
       <Filter>Source Files\Events</Filter>
     </ClCompile>
@@ -248,6 +248,12 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Core\Game.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Util\Singleton.cpp">
+      <Filter>Source Files\Util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

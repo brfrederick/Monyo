@@ -5,6 +5,7 @@
 #pragma once
 #include <Windows.h>
 #include <string>
+#include "..\Util\Logger.h"
 
 // Windows message handler
 LRESULT CALLBACK WndMsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -26,7 +27,11 @@ public:
 	~App(void);
 
 	virtual int Init();		// Create window and init game
-	int Run();		// Start the Application		
+	virtual int Shutdown(); // Release memory 
+	int Run();				// Start the Application		
+
+	virtual int Update() = 0;
+	virtual int Render() = 0;
 
 protected:
 

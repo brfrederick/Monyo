@@ -6,8 +6,7 @@
 #include "Game.h"
 
 
-Game::Game(WindowSettings settings, HINSTANCE hInstance)
-	: App (settings, hInstance)
+Game::Game()
 {
 }
 

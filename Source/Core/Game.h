@@ -9,7 +9,7 @@ Purpose: Contain Game Module initialization and shutdown
 class Game : public App
 {
 public:
-	Game(WindowSettings settings, HINSTANCE hInstance);
+	Game();
 	~Game(void);
 
 	virtual int Init() override;

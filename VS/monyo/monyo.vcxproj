@@ -93,6 +93,7 @@
     <ClInclude Include="..\..\Source\Core\Game.h" />
     <ClInclude Include="..\..\Source\Core\IModule.h" />
     <ClInclude Include="..\..\Source\Core\Monyo.h" />
+    <ClInclude Include="..\..\Source\Core\GameWindow.h" />
     <ClInclude Include="..\..\Source\Events\Event.h" />
     <ClInclude Include="..\..\Source\Events\EventManager.h" />
     <ClInclude Include="..\..\Source\Game\Entity.h" />
@@ -104,7 +105,7 @@
     <ClInclude Include="..\..\Source\Graphics\Renderer.h" />
     <ClInclude Include="..\..\Source\Graphics\RenderStep.h" />
     <ClInclude Include="..\..\Source\Util\File.h" />
-    <ClInclude Include="..\..\Source\Util\InputManager.h" />
+    <ClInclude Include="..\..\Source\Input\InputManager.h" />
     <ClInclude Include="..\..\Source\Util\Logger.h" />
     <ClInclude Include="..\..\Source\Util\Singleton.h" />
     <ClInclude Include="..\..\Source\Util\SmartBucket.h" />
@@ -132,6 +133,7 @@
     <ClCompile Include="..\..\Source\Components\ScriptComponent.cpp" />
     <ClCompile Include="..\..\Source\Core\App.cpp" />
     <ClCompile Include="..\..\Source\Core\Game.cpp" />
+    <ClCompile Include="..\..\Source\Core\GameWindow.cpp" />
     <ClCompile Include="..\..\Source\Core\Monyo.cpp" />
     <ClCompile Include="..\..\Source\Events\Event.cpp" />
     <ClCompile Include="..\..\Source\Events\EventManager.cpp" />

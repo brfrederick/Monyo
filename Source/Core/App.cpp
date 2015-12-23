@@ -5,26 +5,7 @@ Author: Braxton Frederick
 
 #include "App.h"
 
-// @TODO move to an input handler
-LRESULT CALLBACK WndMsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-
-	switch (msg)
-	{
-	case WM_LBUTTONDOWN:
-		MessageBox(0, L"Mouse Input", L"Left button clicked", MB_OK);
-		return 0;
-
-	case WM_DESTROY:
-		PostQuitMessage(0);
-		return 0;
-	}
-
-	return DefWindowProc(hWnd, msg, wParam, lParam);
-}
-
-App::App(WindowSettings settings, HINSTANCE hInstance)
-	: hInstance(hInstance), 
-	m_settings(settings)
+App::App()
 {
 }
 
@@ -38,12 +19,6 @@ int App::Init()
 {
 	Logger::Debug("App::Init");
 
-	//Windows application specific initalization
-	if (this->InitWindow() != 0) 
-	{
-		return -1;
-	}
-
 	// Init Event Manager
 
 	// Init InputManager (?)
@@ -51,73 +26,40 @@ int App::Init()
 	return 0;
 }
 
-//Windows application specific initalization
-int App::InitWindow()
+int App::InitWindow(WindowSettings settings, HINSTANCE hInstance)
 {
-	Logger::Debug("App::InitWindow");
+	Logger::Debug("App::Init(window,hInstance)");
 
-	WNDCLASS wc;
-	wc.style = CS_HREDRAW | CS_VREDRAW;
-	wc.lpfnWndProc = WndMsgProc;
-	wc.cbClsExtra = 0;
-	wc.cbWndExtra = 0;
-	wc.hInstance = this->hInstance;
-	wc.hIcon = LoadIcon(0, IDI_APPLICATION);
-	wc.hCursor = LoadCursor(0, IDC_ARROW);
-	wc.hbrBackground = (HBRUSH)GetStockObject(NULL_BRUSH);
-	wc.lpszMenuName = 0;
-	wc.lpszClassName = L"AppWndClass";
-
-	if (!RegisterClass(&wc)) 
+	// Init window
+	if (GameWindow::Get().Init(settings, hInstance) != 0) 
 	{
-		return -1;	 // Register Class Failed
+		Logger::Debug("Window failed to initialize");
+		return -1;
 	}
 
-	RECT bounds = { 0, 0, m_settings.width, m_settings.height };
-	AdjustWindowRect(&bounds, WS_OVERLAPPEDWINDOW, false);
-	int width = bounds.right - bounds.left;
-	int height = bounds.bottom - bounds.top;
-
-	// Convert string to a LPCWSTR 
-	std::wstring stemp = std::wstring(m_settings.title.begin(), m_settings.title.end());
-	LPCWSTR swTitle = stemp.c_str();
-
-	this->hMainWnd = CreateWindow(
-		L"AppWndClass",
-		swTitle,	 
-		WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT,
-		CW_USEDEFAULT,
-		width,
-		height,
-		0,
-		0,
-		this->hInstance,
-		0
-		);
-
-	if (this->hMainWnd == 0) {
-		return -1;	// Create window failed
-	}
-
-	return 0;
+	// Init rest of the system
+	return this->Init();
 }
 
 #pragma endregion
 
+int App::Shutdown()
+{
+	Logger::Debug("App::Shutdown");
+
+	GameWindow::Get().Shutdown();
+
+	return 0;
+}
+
 // Start the Application
-// @NOTE add params, two callbacks, update and draw? game::run calls base.run passing
-//		the callbacks to properly trigger the loop?
-// @NOTE virtualize update and draw functions, game override them but not RUN ?
-// @NOTE might be better to utilize the EventManager and trigger update and draw events
-//		Other systems like World and GraphicsM. would be listening to the events
 int App::Run()
 {
 	Logger::Debug("App::Run");
 
 	//Show window
-	ShowWindow(this->hMainWnd, 1);
-	UpdateWindow(this->hMainWnd);
+	GameWindow::Get().Show();
+	GameWindow::Get().Update();
 
 	MSG msg = { 0 };
 	BOOL bContinue = 1;
@@ -143,9 +85,3 @@ int App::Run()
 	return (int)msg.wParam;
 }
 
-int App::Shutdown() 
-{
-	Logger::Debug("App::Shutdown");
-
-	return 0;
-}

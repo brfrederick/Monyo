@@ -1,6 +1,5 @@
 #include "Monyo.h"
 
-
 int Monyo::Init() 
 {
 	Logger::Debug("Monyo::Init");
@@ -46,6 +45,8 @@ int Monyo::Shutdown()
 	return 0;
 }
 
+#pragma region Loop
+
 void Monyo::Update() 
 {
 	World::Get().Update();
@@ -55,3 +56,19 @@ void Monyo::Render()
 {
 	GraphicsManager::Get().Render();
 }
+
+#pragma endregion
+
+#pragma region Window
+
+void Monyo::ShowWindow() 
+{
+	GameWindow::Get().Show();
+}
+
+void Monyo::UpdateWindow() 
+{
+	GameWindow::Get().Update();
+}
+
+#pragma endregion

@@ -155,6 +155,12 @@
     <ClInclude Include="..\..\Source\Util\Singleton.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Core\Module.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Core\Monyo.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\..\Assets\Shaders\PixelShader.hlsl">
@@ -254,6 +260,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Util\Singleton.cpp">
       <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Core\Monyo.cpp">
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

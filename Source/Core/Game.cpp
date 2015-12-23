@@ -5,6 +5,7 @@
 #pragma once
 #include "Game.h"
 
+
 Game::Game(WindowSettings settings, HINSTANCE hInstance)
 	: App (settings, hInstance)
 {
@@ -22,12 +23,11 @@ int Game::Init()
 	}
 
 	Logger::Debug("Game::Init");
-
-	// init graphics
-
-	// init assetM (?)
-
-	// init world
+	
+	if (Monyo::Get().Init() != 0) 
+	{
+		return -1;
+	}
 
 	return 0;
 }
@@ -36,6 +36,8 @@ int Game::Init()
 int Game::Shutdown()
 {
 	Logger::Debug("Game::ShutDown");
+
+	Monyo::Get().Shutdown();
 
 	// Last, because of reverse order
 	App::Shutdown();

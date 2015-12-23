@@ -11,13 +11,7 @@ public:
 		return instance;
 	}
 
-private:
-	Singleton<T>() {};
-	Singleton<T>(Singleton<T> const&);
-	void operator=(Singleton<T> const&) = {};
-
-public:
-	Singleton<T>(Singleton<T> const&) = delete;
-	void operator=(Singleton<T> const&) = delete;
+protected:
+	explicit Singleton<T>() {};
 
 };

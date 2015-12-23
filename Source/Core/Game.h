@@ -4,6 +4,7 @@ Purpose: Contain Game Module initialization and shutdown
 
 #pragma once
 #include "App.h"
+#include "Monyo.h"
 
 class Game : public App
 {

@@ -91,6 +91,8 @@
     <ClInclude Include="..\..\Source\Components\ScriptComponent.h" />
     <ClInclude Include="..\..\Source\Core\App.h" />
     <ClInclude Include="..\..\Source\Core\Game.h" />
+    <ClInclude Include="..\..\Source\Core\Module.h" />
+    <ClInclude Include="..\..\Source\Core\Monyo.h" />
     <ClInclude Include="..\..\Source\Events\Event.h" />
     <ClInclude Include="..\..\Source\Events\EventManager.h" />
     <ClInclude Include="..\..\Source\Game\Entity.h" />
@@ -130,6 +132,7 @@
     <ClCompile Include="..\..\Source\Components\ScriptComponent.cpp" />
     <ClCompile Include="..\..\Source\Core\App.cpp" />
     <ClCompile Include="..\..\Source\Core\Game.cpp" />
+    <ClCompile Include="..\..\Source\Core\Monyo.cpp" />
     <ClCompile Include="..\..\Source\Events\Event.cpp" />
     <ClCompile Include="..\..\Source\Events\EventManager.cpp" />
     <ClCompile Include="..\..\Source\Game\Entity.cpp" />

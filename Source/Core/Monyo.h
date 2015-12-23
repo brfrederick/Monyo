@@ -1,17 +1,19 @@
 #pragma once
-#include "../Core/Module.h"
+#include "Module.h"
 #include "../Util/Singleton.h"
 #include "../Util/Logger.h"
+#include "../Graphics/GraphicsManager.h"
+#include "../Game/World.h"
+#include "../Assets/AssetManager.h"
 
-class AssetManager : public Module, public Singleton<AssetManager>
+class Monyo : public Module, public Singleton<Monyo>
 {
+
 public:
-	AssetManager() {};
-	~AssetManager() {};
 
 	virtual int Init() override;
 	virtual int Shutdown() override;
-
+	
 	void Update();
 	void Render();
 };

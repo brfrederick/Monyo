@@ -44,8 +44,6 @@ int App::Init()
 		return -1;
 	}
 
-	// Init Logger
-
 	// Init Event Manager
 
 	// Init InputManager (?)

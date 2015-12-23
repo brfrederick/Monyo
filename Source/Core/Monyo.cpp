@@ -8,6 +8,8 @@ int Monyo::Init()
 	// init assetM (?)
 	if (AssetManager::Get().Init() != 0)
 	{
+		Logger::Debug("AssetManager failed to initialize");
+
 		return -1;
 	}
 
@@ -20,6 +22,8 @@ int Monyo::Init()
 	// init world
 	if (World::Get().Init() != 0) 
 	{
+		Logger::Debug("World failed to initialize");
+
 		return -1;
 	}
 

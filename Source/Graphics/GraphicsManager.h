@@ -2,6 +2,7 @@
 #include "../Core/IModule.h"
 #include "../Util/Singleton.h"
 #include "../Util/Logger.h"
+#include "Renderer.h"
 
 class GraphicsManager : public IModule, public Singleton<GraphicsManager>
 {
@@ -14,4 +15,7 @@ public:
 
 	void Update();
 	void Render();
+
+private:
+	Renderer m_renderer;
 };

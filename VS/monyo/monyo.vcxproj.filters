@@ -155,10 +155,10 @@
     <ClInclude Include="..\..\Source\Util\Singleton.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Core\Module.h">
+    <ClInclude Include="..\..\Source\Core\Monyo.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Core\Monyo.h">
+    <ClInclude Include="..\..\Source\Core\IModule.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>

@@ -91,7 +91,7 @@
     <ClInclude Include="..\..\Source\Components\ScriptComponent.h" />
     <ClInclude Include="..\..\Source\Core\App.h" />
     <ClInclude Include="..\..\Source\Core\Game.h" />
-    <ClInclude Include="..\..\Source\Core\Module.h" />
+    <ClInclude Include="..\..\Source\Core\IModule.h" />
     <ClInclude Include="..\..\Source\Core\Monyo.h" />
     <ClInclude Include="..\..\Source\Events\Event.h" />
     <ClInclude Include="..\..\Source\Events\EventManager.h" />

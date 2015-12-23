@@ -1,10 +1,10 @@
 #pragma once
 #pragma once
-#include "../Core/Module.h"
+#include "../Core/IModule.h"
 #include "../Util/Singleton.h"
 #include "../Util/Logger.h"
 
-class World : public Module, public Singleton<World>
+class World : public IModule, public Singleton<World>
 {
 public:
 	World() {};

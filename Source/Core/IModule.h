@@ -1,7 +1,7 @@
 #pragma once
 #include "../Util/Singleton.h"
 
-class Module
+class IModule
 {
 public:
 	virtual int Init() = 0;

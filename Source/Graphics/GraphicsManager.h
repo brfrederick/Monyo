@@ -1,9 +1,9 @@
 #pragma once
-#include "../Core/Module.h"
+#include "../Core/IModule.h"
 #include "../Util/Singleton.h"
 #include "../Util/Logger.h"
 
-class GraphicsManager : public Module, public Singleton<GraphicsManager>
+class GraphicsManager : public IModule, public Singleton<GraphicsManager>
 {
 public:
 	GraphicsManager() {};

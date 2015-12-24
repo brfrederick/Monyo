@@ -105,6 +105,14 @@ void Renderer::Render()
 {
 	Clear();
 
+	// Call to render steps
+	// GeometryPass
+	// LightPass
+	// TransparentPass
+	// Particle Pass
+	// Post Processing Passes
+	// UI
+
 	m_swapChain->Present(0, 0);
 }
 

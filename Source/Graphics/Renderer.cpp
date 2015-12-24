@@ -19,8 +19,6 @@ int Renderer::InitGraphicsAPI()
 
 	// create a struct to hold information about the swap chain
 	DXGI_SWAP_CHAIN_DESC scd;
-
-	// clear out the struct for use
 	ZeroMemory(&scd, sizeof(DXGI_SWAP_CHAIN_DESC));
 
 	//	Swap Chain Description
@@ -50,6 +48,9 @@ int Renderer::InitGraphicsAPI()
 		&m_ctx
 		);
 
+	// --------------------------
+
+
 	//	BACK BUFFER 
 	ID3D11Texture2D *pBackBuffer;
 	m_swapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (LPVOID*)&pBackBuffer);
@@ -58,8 +59,26 @@ int Renderer::InitGraphicsAPI()
 	m_device->CreateRenderTargetView(pBackBuffer, NULL, &m_backBuffer);
 	pBackBuffer->Release();
 
+	// ------------------------
+	// DepthStencilDesc
+	D3D11_TEXTURE2D_DESC dsd;
+	dsd.Width = GameWindow::Get().GetWidth();
+	dsd.Height = GameWindow::Get().GetHeight();
+	dsd.MipLevels = 1;
+	dsd.ArraySize = 1;
+	dsd.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+	dsd.Usage = D3D11_USAGE_DEFAULT;
+	dsd.BindFlags = D3D11_BIND_DEPTH_STENCIL;
+	dsd.CPUAccessFlags = 0;
+	dsd.MiscFlags = 0;
+	dsd.SampleDesc.Count = 1;
+	dsd.SampleDesc.Quality = 0;
+
+	m_device->CreateTexture2D(&dsd, 0, &m_depthStencilBuffer);
+	m_device->CreateDepthStencilView(m_depthStencilBuffer, 0, &m_depthStencilView);
+
 	// set the render target as the back buffer
-	m_ctx->OMSetRenderTargets(1, &m_backBuffer, NULL);
+	m_ctx->OMSetRenderTargets(1, &m_backBuffer, m_depthStencilView);
 
 	//	View Port
 	D3D11_VIEWPORT viewport;
@@ -122,4 +141,7 @@ void Renderer::Clear()
 	float clearColor[4] = { 1.0f, 0.4f, 0.2f, 1.0f };
 
 	m_ctx->ClearRenderTargetView(m_backBuffer, clearColor);
+	m_ctx->ClearDepthStencilView(
+		m_depthStencilView, D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0
+	);
 }

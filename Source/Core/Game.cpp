@@ -54,6 +54,7 @@ int Game::Update()
 int Game::Render() 
 {
 	//Logger::Debug("Game::Render");
+	Monyo::Get().Render();
 
 	return 0;
 }

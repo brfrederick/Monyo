@@ -54,6 +54,7 @@ void Monyo::Update()
 
 void Monyo::Render() 
 {
+	
 	GraphicsManager::Get().Render();
 }
 

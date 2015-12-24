@@ -32,6 +32,9 @@ public:
 	void Show();
 	void Update();
 
+	int GetWidth();
+	int GetHeight();
+
 protected:
 	HINSTANCE m_hInstance;
 	HWND m_hMainWnd;

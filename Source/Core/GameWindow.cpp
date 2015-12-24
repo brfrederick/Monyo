@@ -110,3 +110,13 @@ void GameWindow::Update()
 {
 	UpdateWindow(m_hMainWnd);
 }
+
+int GameWindow::GetWidth() 
+{
+	return m_settings.width;
+}
+
+int GameWindow::GetHeight() 
+{
+	return m_settings.height;
+}

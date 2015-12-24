@@ -45,9 +45,4 @@ protected:
 	ID3D11Texture2D*          m_depthStencilBuffer;
 	ID3D11RenderTargetView*   m_backBuffer;
 	ID3D11DepthStencilView*   m_depthStencilView;
-	D3D11_VIEWPORT            m_viewport;
-	float m_aspectRatio;
-	//D3D11_VIEWPORT            m_viewport;
-	//D3D_DRIVER_TYPE           m_driverType;
-	//D3D_FEATURE_LEVEL         m_featureLevel;
 };

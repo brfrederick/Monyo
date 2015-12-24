@@ -34,7 +34,7 @@ int Renderer::InitGraphicsAPI()
 	scd.Windowed = TRUE;                                    // windowed/full-screen mode
 	scd.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;		// allow full-screen switching
 
-															//	Create Device and Swap Chain
+	//	Create Device and Swap Chain
 	D3D11CreateDeviceAndSwapChain(
 		NULL,
 		D3D_DRIVER_TYPE_HARDWARE,
@@ -103,9 +103,15 @@ int Renderer::ShutdownD3D()
 
 void Renderer::Render()
 {
-	// Clear backBuffer
-	float clearColor[4] = { 0.0f, 0.2f, 0.4f, 1.0f };
-	m_ctx->ClearRenderTargetView(m_backBuffer, clearColor);
+	Clear();
 
 	m_swapChain->Present(0, 0);
+}
+
+void Renderer::Clear() 
+{
+	// I like this color.. lets call it MonyoOrange? Oh or MonyoBlue cause reasons.
+	float clearColor[4] = { 1.0f, 0.4f, 0.2f, 1.0f };
+
+	m_ctx->ClearRenderTargetView(m_backBuffer, clearColor);
 }

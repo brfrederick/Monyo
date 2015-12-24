@@ -31,14 +31,17 @@ public:
 	~Renderer() {};
 
 	virtual int Init() override;
+	int InitGraphicsAPI();
 	virtual int Shutdown() override;
 	int ShutdownD3D();
 
-	int InitGraphicsAPI();
 	int OnResize();
 	void Render();
+	void Clear();
 
 protected:
+
+	// Directx Variables
 	ID3D11Device*             m_device;
 	ID3D11DeviceContext*      m_ctx;
 	IDXGISwapChain*           m_swapChain;

@@ -4,8 +4,8 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pCmdLine, int nShowCmd) {
 	WindowSettings settings;
-	settings.width = 800;
-	settings.height = 600;
+	settings.width = 1360;
+	settings.height = 768;
 	settings.minimized = false;
 	settings.maximized = false;
 	settings.resizing = false;

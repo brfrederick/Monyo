@@ -4,5 +4,11 @@
 
 class IRenderStep 
 {
-	virtual void Render() = 0;
+
+public:	
+	virtual void Render() = 0;	// Render
+
+protected:
+	virtual void Pre() = 0;		// Change settings
+	virtual void Post() = 0;	// Reset settings
 };

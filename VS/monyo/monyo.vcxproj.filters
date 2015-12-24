@@ -125,9 +125,6 @@
     <ClInclude Include="..\..\Source\Graphics\Renderer.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Graphics\RenderStep.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\Util\SmartBucket.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
@@ -163,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Input\InputManager.h">
       <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Graphics\IRenderStep.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Graphics\GeometryStep.h">
+      <Filter>Header Files\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -237,9 +240,6 @@
     <ClCompile Include="..\..\Source\Graphics\Renderer.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Graphics\RenderStep.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Graphics\dxerr.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
@@ -269,6 +269,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Core\GameWindow.cpp">
       <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Graphics\GeometryStep.cpp">
+      <Filter>Source Files\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

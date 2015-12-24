@@ -101,9 +101,10 @@
     <ClInclude Include="..\..\Source\Game\Timer.h" />
     <ClInclude Include="..\..\Source\Game\World.h" />
     <ClInclude Include="..\..\Source\Graphics\dxerr.h" />
+    <ClInclude Include="..\..\Source\Graphics\GeometryStep.h" />
     <ClInclude Include="..\..\Source\Graphics\GraphicsManager.h" />
     <ClInclude Include="..\..\Source\Graphics\Renderer.h" />
-    <ClInclude Include="..\..\Source\Graphics\RenderStep.h" />
+    <ClInclude Include="..\..\Source\Graphics\IRenderStep.h" />
     <ClInclude Include="..\..\Source\Util\File.h" />
     <ClInclude Include="..\..\Source\Input\InputManager.h" />
     <ClInclude Include="..\..\Source\Util\Logger.h" />
@@ -142,9 +143,9 @@
     <ClCompile Include="..\..\Source\Game\Timer.cpp" />
     <ClCompile Include="..\..\Source\Game\World.cpp" />
     <ClCompile Include="..\..\Source\Graphics\dxerr.cpp" />
+    <ClCompile Include="..\..\Source\Graphics\GeometryStep.cpp" />
     <ClCompile Include="..\..\Source\Graphics\GraphicsManager.cpp" />
     <ClCompile Include="..\..\Source\Graphics\Renderer.cpp" />
-    <ClCompile Include="..\..\Source\Graphics\RenderStep.cpp" />
     <ClCompile Include="..\..\Source\Input\InputManager.cpp" />
     <ClCompile Include="..\..\Source\main.cpp" />
     <ClCompile Include="..\..\Source\Util\File.cpp" />

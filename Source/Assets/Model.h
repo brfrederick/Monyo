@@ -4,12 +4,14 @@
 class Model 
 {
 public:
-	Model() {};
-	~Model() {};
+	Model();
+	~Model();
 
-	ID3D11Buffer** GetVertexBuffer() { return &m_vertexBuffer; }
-	ID3D11Buffer* GetIndexBuffer() { return m_indexBuffer; }
-	int GetIndexCount() { return m_indexCount; }
+	ID3D11Buffer** GetVertexBuffer();
+	ID3D11Buffer** GetIndexBuffer();
+	int GetIndexCount();
+
+	void SetIndexCount(int value);
 
 protected:
 	int m_indexCount;

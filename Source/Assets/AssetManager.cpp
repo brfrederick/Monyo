@@ -14,11 +14,8 @@ int AssetManager::Shutdown()
 	return 0;
 }
 
-void AssetManager::Update()
+Model* AssetManager::LoadModel(char* fileName) 
 {
-}
-
-void AssetManager::Render()
-{
+	return ModelFactory::BuildModel(fileName);
 }
 

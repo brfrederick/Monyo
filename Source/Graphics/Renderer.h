@@ -5,24 +5,6 @@
 #include <d3d11.h>
 #include <d3dcompiler.h>
 
-#if defined(DEBUG) | defined(_DEBUG)
-#ifndef HR
-#define HR(x)												\
-	{															\
-		HRESULT hr = (x);										\
-		if(FAILED(hr))											\
-		{														\
-			DXTrace(__FILEW__, (DWORD)__LINE__, hr, L#x, true);	\
-			PostQuitMessage(0);									\
-		}														\
-	}														
-#endif
-#else
-#ifndef HR
-#define HR(x) (x) // Do nothing special!
-#endif
-#endif
-
 class Renderer : public IModule
 {
 
@@ -34,6 +16,8 @@ public:
 	int InitGraphicsAPI();
 	virtual int Shutdown() override;
 	int ShutdownD3D();
+
+	ID3D11Device* GetDevice() { return m_device; }
 
 	int OnResize();
 	void Render();

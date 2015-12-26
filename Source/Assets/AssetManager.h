@@ -2,6 +2,8 @@
 #include "../Core/IModule.h"
 #include "../Util/Singleton.h"
 #include "../Util/Logger.h"
+#include "Model.h"
+#include "ModelFactory.h"
 
 class AssetManager : public IModule, public Singleton<AssetManager>
 {
@@ -11,7 +13,6 @@ public:
 
 	virtual int Init() override;
 	virtual int Shutdown() override;
-
-	void Update();
-	void Render();
+	
+	Model* LoadModel(char* fileName);
 };

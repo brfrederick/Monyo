@@ -1,4 +1,5 @@
 #pragma once
+#include <d3d11.h>
 #include "../Core/IModule.h"
 #include "../Util/Singleton.h"
 #include "../Util/Logger.h"
@@ -12,6 +13,8 @@ public:
 
 	virtual int Init() override;
 	virtual int Shutdown() override;
+
+	ID3D11Device* GetDevice() { return m_renderer.GetDevice(); }
 
 	void Update();
 	void Render();

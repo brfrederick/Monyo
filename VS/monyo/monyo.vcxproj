@@ -81,8 +81,10 @@
     <ClInclude Include="..\..\Source\Assets\AssetManager.h" />
     <ClInclude Include="..\..\Source\Assets\Material.h" />
     <ClInclude Include="..\..\Source\Assets\Model.h" />
+    <ClInclude Include="..\..\Source\Assets\ModelFactory.h" />
     <ClInclude Include="..\..\Source\Assets\Shader.h" />
     <ClInclude Include="..\..\Source\Assets\Texture.h" />
+    <ClInclude Include="..\..\Source\Assets\Vertex.h" />
     <ClInclude Include="..\..\Source\Components\CameraComponent.h" />
     <ClInclude Include="..\..\Source\Components\Component.h" />
     <ClInclude Include="..\..\Source\Components\LightComponent.h" />
@@ -124,6 +126,7 @@
     <ClCompile Include="..\..\Source\Assets\AssetManager.cpp" />
     <ClCompile Include="..\..\Source\Assets\Material.cpp" />
     <ClCompile Include="..\..\Source\Assets\Model.cpp" />
+    <ClCompile Include="..\..\Source\Assets\ModelFactory.cpp" />
     <ClCompile Include="..\..\Source\Assets\Script.cpp" />
     <ClCompile Include="..\..\Source\Assets\Shader.cpp" />
     <ClCompile Include="..\..\Source\Assets\Texture.cpp" />

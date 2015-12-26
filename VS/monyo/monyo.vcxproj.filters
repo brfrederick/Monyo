@@ -167,6 +167,12 @@
     <ClInclude Include="..\..\Source\Graphics\GeometryStep.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Assets\ModelFactory.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Assets\Vertex.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\..\Assets\Shaders\PixelShader.hlsl">
@@ -272,6 +278,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Graphics\GeometryStep.cpp">
       <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Assets\ModelFactory.cpp">
+      <Filter>Source Files\Assets</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

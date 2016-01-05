@@ -29,6 +29,7 @@
 Temp/
 Build/
 packages/
+VS/monyo.VC.opendb
 
 *.opensdf
 *.sdf

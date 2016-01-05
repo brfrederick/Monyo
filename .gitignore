@@ -28,6 +28,7 @@
 
 Temp/
 Build/
+packages/
 
 *.opensdf
 *.sdf

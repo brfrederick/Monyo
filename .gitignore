@@ -27,7 +27,7 @@
 *.app
 
 Temp/
-Build/
+_Build/
 
 *.opensdf
 *.sdf

@@ -1,4 +1,5 @@
 #pragma once
+#include <string.h>
 #include "../Core/IModule.h"
 #include "../Util/Singleton.h"
 #include "../Util/Logger.h"
@@ -14,5 +15,10 @@ public:
 	virtual int Init() override;
 	virtual int Shutdown() override;
 	
-	Model* LoadModel(char* fileName);
+	
+	Model* LoadModel(std::string fileName);
+
+protected:
+
+	std::string m_ModelDir;
 };

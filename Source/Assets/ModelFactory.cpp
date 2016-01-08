@@ -1,7 +1,7 @@
 #include "ModelFactory.h"
 using namespace DirectX;
 
-Model* ModelFactory::BuildModel(char* fileName) 
+Model* ModelFactory::BuildModel(std::string fileName) 
 {
 	// File input object
 	std::ifstream obj(fileName);

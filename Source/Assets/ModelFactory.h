@@ -1,4 +1,5 @@
 #pragma once
+#include <string.h>
 #include <fstream>
 #include <vector>
 #include <d3d11.h>
@@ -10,5 +11,5 @@
 class ModelFactory 
 {
 public:
-	static Model* BuildModel(char* fileName);
+	static Model* BuildModel(std::string fileName);
 };

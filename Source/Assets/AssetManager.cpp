@@ -4,6 +4,8 @@ int AssetManager::Init()
 {
 	Logger::Debug("AssetManager::Init");
 
+	m_ModelDir = "../Assets/Models/";
+
 	return 0;
 }
 
@@ -14,8 +16,9 @@ int AssetManager::Shutdown()
 	return 0;
 }
 
-Model* AssetManager::LoadModel(char* fileName) 
+Model* AssetManager::LoadModel(std::string fileName) 
 {
-	return ModelFactory::BuildModel(fileName);
+
+	return ModelFactory::BuildModel(m_ModelDir + fileName);
 }
 

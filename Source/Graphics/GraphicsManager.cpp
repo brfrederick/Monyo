@@ -12,6 +12,8 @@ int GraphicsManager::Init()
 
 	return 0;
 }
+// in world after creating model push into vector
+// remove from vector in world befor destorying
 
 int GraphicsManager::Shutdown()
 {
@@ -32,3 +34,17 @@ void GraphicsManager::Render()
 	m_renderer.Render();
 }
 
+void GraphicsManager::RegisterModel(Model* model) 
+{
+	m_models.push_back(model);
+}
+
+void GraphicsManager::DeregisterModel(Model* model)
+{
+	// Come up with solution for this later
+}
+
+std::vector<Model*> GraphicsManager::GetModels()
+{
+	return m_models;
+}

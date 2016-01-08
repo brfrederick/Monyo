@@ -7,6 +7,7 @@ int World::Init()
 
 	// For testing purposes
 	m_model = AssetManager::Get().LoadModel("cube.obj");
+	GraphicsManager::Get().RegisterModel(m_model);
 
 	return 0;
 }

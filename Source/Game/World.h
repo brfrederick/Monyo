@@ -10,6 +10,9 @@ public:
 	World() {};
 	~World() {};
 
+	// For testing purposes
+	Model* model;
+
 	virtual int Init() override;
 	virtual int Shutdown() override;
 

@@ -1,7 +1,6 @@
 #include "Model.h"
 
-Model::Model(std::string assetId) 
-	: m_assetId(assetId), m_indexCount(0), m_vertexBuffer(0), m_indexBuffer(0)
+Model::Model(std::string assetId) : m_assetId(assetId), m_indexCount(0), m_vertexBuffer(0), m_indexBuffer(0)
 {
 
 }

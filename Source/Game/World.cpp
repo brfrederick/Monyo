@@ -16,7 +16,7 @@ int World::Shutdown()
 {
 	Logger::Debug("World::Shutdown");
 
-	delete m_model;
+	AssetManager::Get().UnloadModel(m_model);
 
 	return 0;
 }

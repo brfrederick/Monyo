@@ -1,4 +1,5 @@
 #pragma once
+#include <map>
 #include <string.h>
 #include "../Core/IModule.h"
 #include "../Util/Singleton.h"
@@ -15,10 +16,13 @@ public:
 	virtual int Init() override;
 	virtual int Shutdown() override;
 	
-	
 	Model* LoadModel(std::string fileName);
+	void UnloadModel(Model* model);
+
+private:
+	std::map<std::string, Model*>* m_models;
+	std::map<std::string, int>* m_assetRefCount;
 
 protected:
-
 	std::string m_ModelDir;
 };

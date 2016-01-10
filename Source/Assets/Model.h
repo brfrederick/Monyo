@@ -5,6 +5,7 @@
 class Model 
 {
 public:
+	Model(){};
 	Model(std::string assetId);
 	~Model();
 

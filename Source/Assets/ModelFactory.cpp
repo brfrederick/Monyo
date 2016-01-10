@@ -110,7 +110,7 @@ Model* ModelFactory::BuildModel(std::string fileName)
 	obj.close();
 
 	// Create the model shell
-	Model* model = new Model();
+	Model* model = new Model(fileName);
 
 	// Create Vertex Buffer Description
 	D3D11_BUFFER_DESC vbd;

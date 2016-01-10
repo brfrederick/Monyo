@@ -1,7 +1,7 @@
 #include "Model.h"
 
-Model::Model() 
-	: m_indexCount(0), m_vertexBuffer(0), m_indexBuffer(0)
+Model::Model(std::string assetId) 
+	: m_assetId(assetId), m_indexCount(0), m_vertexBuffer(0), m_indexBuffer(0)
 {
 
 }
@@ -9,6 +9,11 @@ Model::Model()
 Model::~Model() 
 {
 
+}
+
+void Model::Unload() 
+{
+	//AssetManager::Get(); // UnloadModel( m_assetId );
 }
 
 ID3D11Buffer** Model::GetVertexBuffer() 
@@ -24,6 +29,11 @@ ID3D11Buffer** Model::GetIndexBuffer()
 int Model::GetIndexCount() 
 {
 	return m_indexCount;
+}
+
+std::string Model::GetAssetID() 
+{
+	return m_assetId;
 }
 
 void Model::SetIndexCount(int value)

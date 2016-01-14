@@ -1,7 +1,9 @@
 #pragma once
 #include <string>
-//#include "../Graphics/GraphicsManager.h"
+#include "../Graphics/GraphicsManager.h"
 #include "Shader.h"
+
+using namespace DirectX;
 
 class ShaderFactory 
 {

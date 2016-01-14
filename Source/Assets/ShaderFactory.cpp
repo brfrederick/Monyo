@@ -2,20 +2,36 @@
 
 SimpleVertexShader* ShaderFactory::LoadVertexShader(std::string file) 
 {
-	//std::wstring stemp = std::wstring(m_settings.title.begin(), m_settings.title.end());
-	//LPCWSTR swTitle = stemp.c_str();
+	ID3D11Device* device = GraphicsManager::Get().GetDevice();
+	ID3D11DeviceContext* ctx = GraphicsManager::Get().GetContext();
+	SimpleVertexShader* shader = new SimpleVertexShader(device, ctx);
 
-	
+	std::wstring stemp = std::wstring(file.begin(), file.end());
+	shader->LoadShaderFile(stemp.c_str());
 
-	return nullptr;
+	return shader;
 }
 
 SimplePixelShader* ShaderFactory::LoadPixelShader(std::string file)
 {
-	return nullptr;
+	ID3D11Device* device = GraphicsManager::Get().GetDevice();
+	ID3D11DeviceContext* ctx = GraphicsManager::Get().GetContext();
+	SimplePixelShader* shader = new SimplePixelShader(device, ctx);
+
+	std::wstring stemp = std::wstring(file.begin(), file.end());
+	shader->LoadShaderFile(stemp.c_str());
+
+	return shader;
 }
 
 SimpleGeometryShader* ShaderFactory::LoadGeometryShader(std::string file)
 {
-	return nullptr;
+	ID3D11Device* device = GraphicsManager::Get().GetDevice();
+	ID3D11DeviceContext* ctx = GraphicsManager::Get().GetContext();
+	SimpleGeometryShader* shader = new SimpleGeometryShader(device, ctx);
+
+	std::wstring stemp = std::wstring(file.begin(), file.end());
+	shader->LoadShaderFile(stemp.c_str());
+
+	return shader;
 }

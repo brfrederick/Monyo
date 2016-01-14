@@ -17,6 +17,7 @@ public:
 	virtual int Shutdown() override;
 
 	ID3D11Device* GetDevice() { return m_renderer.GetDevice(); }
+	ID3D11DeviceContext* GetContext() { return m_renderer.GetContext(); }
 
 	void Update();
 	void Render();

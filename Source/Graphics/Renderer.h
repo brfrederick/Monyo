@@ -18,6 +18,7 @@ public:
 	int ShutdownD3D();
 
 	ID3D11Device* GetDevice() { return m_device; }
+	ID3D11DeviceContext* GetContext() { return m_ctx; }
 
 	int OnResize();
 	void Render();

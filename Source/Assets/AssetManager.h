@@ -6,6 +6,7 @@
 #include "../Util/Logger.h"
 #include "Model.h"
 #include "ModelFactory.h"
+#include "ShaderFactory.h"
 #include "Shader.h"
 
 class AssetManager : public IModule, public Singleton<AssetManager>

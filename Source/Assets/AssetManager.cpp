@@ -6,7 +6,9 @@ int AssetManager::Init()
 
 	m_ModelDir = "../Assets/Models/";
 	m_ShaderDir = "../Assets/Shaders/";
+	m_TextureDir = "../Assets/Textures";
 	m_models = new std::map<std::string, Model*>();
+	m_textures = new std::map<std::string, ID3D11Texture2D*>();
 	m_assetRefCount = new std::map<std::string, int>();
 	m_vertexShaders = new std::map<std::string, SimpleVertexShader*>();
 	m_pixelShaders = new std::map<std::string, SimplePixelShader*>();
@@ -20,6 +22,7 @@ int AssetManager::Shutdown()
 	Logger::Debug("AssetManager::Shutdown");
 
 	delete m_models;
+	delete m_textures;
 	delete m_assetRefCount;
 	delete m_vertexShaders;
 	delete m_pixelShaders;
@@ -101,4 +104,24 @@ void AssetManager::UnloadModel(Model* model)
 		m_models->erase(assetId);
 		m_assetRefCount->erase(assetId);
 	}
+}
+
+ID3D11Texture2D* AssetManager::LoadTexture(std::string fileName)
+{
+	if (m_textures->count(m_TextureDir + fileName) == 0)
+	{
+		m_textures->insert({ m_TextureDir + fileName, TextureFactory::LoadTexture(m_TextureDir + fileName) });
+		m_assetRefCount->insert({ m_TextureDir + fileName, 1 });
+		return (*m_textures)[m_TextureDir + fileName];
+	}
+	else
+	{
+		(*m_assetRefCount)[m_ModelDir + fileName]++;
+		return (*m_textures)[m_ModelDir + fileName];
+	}
+}
+
+void AssetManager::UnloadTexture()
+{
+
 }

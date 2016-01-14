@@ -5,8 +5,12 @@ int AssetManager::Init()
 	Logger::Debug("AssetManager::Init");
 
 	m_ModelDir = "../Assets/Models/";
+	m_ShaderDir = "../Assets/Shaders/";
 	m_models = new std::map<std::string, Model*>();
 	m_assetRefCount = new std::map<std::string, int>();
+	m_vertexShaders = new std::map<std::string, SimpleVertexShader*>();
+	m_pixelShaders = new std::map<std::string, SimplePixelShader*>();
+	m_geometryShaders = new std::map<std::string, SimpleGeometryShader*>();
 
 	return 0;
 }
@@ -17,8 +21,35 @@ int AssetManager::Shutdown()
 
 	delete m_models;
 	delete m_assetRefCount;
+	delete m_vertexShaders;
+	delete m_pixelShaders;
+	delete m_geometryShaders;
 
 	return 0;
+}
+
+SimpleVertexShader* AssetManager::LoadVertexShader(std::string fileName)
+{
+	if (m_vertexShaders->count(m_ShaderDir + fileName) == 0)
+	{
+
+	}
+}
+
+SimplePixelShader* AssetManager::LoadPixelShader(std::string fileName)
+{
+	if (m_pixelShaders->count(m_ShaderDir + fileName) == 0)
+	{
+
+	}
+}
+
+SimpleGeometryShader* AssetManager::LoadGeometryShader(std::string fileName)
+{
+	if (m_geometryShaders->count(m_ShaderDir + fileName) == 0)
+	{
+
+	}
 }
 
 Model* AssetManager::LoadModel(std::string fileName) 

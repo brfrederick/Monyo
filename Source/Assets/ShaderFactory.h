@@ -1,13 +1,12 @@
 #pragma once
 #include <string>
+//#include "../Graphics/GraphicsManager.h"
 #include "Shader.h"
 
 class ShaderFactory 
 {
-	ShaderFactory();
-	~ShaderFactory();
-
-	SimpleVertexShader* LoadVertexShader(std::string file);
-	SimplePixelShader* LoadPixelShader(std::string file);
-	SimpleGeometryShader* LoadGeometryShader(std::string file);
+public:
+	static SimpleVertexShader* LoadVertexShader(std::string file);
+	static SimplePixelShader* LoadPixelShader(std::string file);
+	static SimpleGeometryShader* LoadGeometryShader(std::string file);
 };

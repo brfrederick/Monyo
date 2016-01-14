@@ -2,6 +2,11 @@
 
 SimpleVertexShader* ShaderFactory::LoadVertexShader(std::string file) 
 {
+	//std::wstring stemp = std::wstring(m_settings.title.begin(), m_settings.title.end());
+	//LPCWSTR swTitle = stemp.c_str();
+
+	
+
 	return nullptr;
 }
 

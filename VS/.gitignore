@@ -29,6 +29,7 @@
 Temp/
 Build/
 packages/
+.vs/
 
 *.opensdf
 *.sdf

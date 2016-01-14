@@ -5,8 +5,12 @@ int AssetManager::Init()
 	Logger::Debug("AssetManager::Init");
 
 	m_ModelDir = "../Assets/Models/";
+	m_ShaderDir = "../Assets/Shaders/";
 	m_models = new std::map<std::string, Model*>();
 	m_assetRefCount = new std::map<std::string, int>();
+	m_vertexShaders = new std::map<std::string, SimpleVertexShader*>();
+	m_pixelShaders = new std::map<std::string, SimplePixelShader*>();
+	m_geometryShaders = new std::map<std::string, SimpleGeometryShader*>();
 
 	return 0;
 }
@@ -17,8 +21,56 @@ int AssetManager::Shutdown()
 
 	delete m_models;
 	delete m_assetRefCount;
+	delete m_vertexShaders;
+	delete m_pixelShaders;
+	delete m_geometryShaders;
 
 	return 0;
+}
+
+SimpleVertexShader* AssetManager::LoadVertexShader(std::string fileName)
+{
+	if (m_vertexShaders->count(m_ShaderDir + fileName) == 0)
+	{
+		m_vertexShaders->insert({ m_ShaderDir + fileName, ShaderFactory::LoadVertexShader(m_ShaderDir + fileName) });
+		m_assetRefCount->insert({ m_ShaderDir + fileName, 1 });
+		return (*m_vertexShaders)[m_ShaderDir + fileName];
+	}
+	else
+	{
+		(*m_assetRefCount)[m_ShaderDir + fileName]++;
+		return (*m_vertexShaders)[m_ShaderDir + fileName];
+	}
+}
+
+SimplePixelShader* AssetManager::LoadPixelShader(std::string fileName)
+{
+	if (m_pixelShaders->count(m_ShaderDir + fileName) == 0)
+	{
+		m_pixelShaders->insert({ m_ShaderDir + fileName, ShaderFactory::LoadPixelShader(m_ShaderDir + fileName) });
+		m_assetRefCount->insert({ m_ShaderDir + fileName, 1 });
+		return (*m_pixelShaders)[m_ShaderDir + fileName];
+	}
+	else
+	{
+		(*m_assetRefCount)[m_ShaderDir + fileName]++;
+		return (*m_pixelShaders)[m_ShaderDir + fileName];
+	}
+}
+
+SimpleGeometryShader* AssetManager::LoadGeometryShader(std::string fileName)
+{
+	if (m_geometryShaders->count(m_ShaderDir + fileName) == 0)
+	{
+		m_geometryShaders->insert({ m_ShaderDir + fileName, ShaderFactory::LoadGeometryShader(m_ShaderDir + fileName) });
+		m_assetRefCount->insert({ m_ShaderDir + fileName, 1 });
+		return (*m_geometryShaders)[m_ShaderDir + fileName];
+	}
+	else
+	{
+		(*m_assetRefCount)[m_ShaderDir + fileName]++;
+		return (*m_geometryShaders)[m_ShaderDir + fileName];
+	}
 }
 
 Model* AssetManager::LoadModel(std::string fileName) 
@@ -31,7 +83,7 @@ Model* AssetManager::LoadModel(std::string fileName)
 		m_assetRefCount->insert({ m_ModelDir + fileName, 1 });
 		return (*m_models)[m_ModelDir + fileName];
 	}
-	else if (m_models->count(m_ModelDir + fileName) == 1) 
+	else
 	{
 		(*m_assetRefCount)[m_ModelDir + fileName]++;
 		return (*m_models)[m_ModelDir + fileName];
